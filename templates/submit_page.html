@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Ticket Concern</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .form-container {
+            width: 50%;
+            max-width: 600px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .input-field,
+        .input-field-long {
+            width: calc(100% - 22px); /* 20px padding and 1px border on each side */
+            padding: 10px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .input-field-long {
+            min-height: 150px; /* Or any other height */
+        }
+
+        .submit-button {
+            width: 95.5%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #5c5c5c;
+            color: white;
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+
+        .submit-button:hover {
+            background-color: #434343;
+        }
+
+        /* Add some padding inside the window */
+        @media (max-width: 768px) {
+            body {
+            padding: 20px;
+            }
+            .form-container {
+            width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form action="/submit" method="post">
+          <label for="subjectType"><b>Subject Type</b></label>
+          <input type="text" id="subjectType" name="subjectType" class="input-field" placeholder="Input Subject Here...">
+          
+          <label for="ticketBody"><b>Ticket Body</b></label>
+          <textarea id="ticketBody" name="ticketBody" class="input-field input-field-long" placeholder="Input Ticket Body Here..."></textarea>
+          
+          <button type="submit" class="submit-button">Generate Tags</button>
+        </form>
+      </div>
+</body>
+</html>
